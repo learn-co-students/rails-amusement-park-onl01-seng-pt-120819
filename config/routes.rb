@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   resources :users
   resources :attractions
   resources :rides
-  resources :sessions
+  # resources :sessions
 
   root 'static#home'
 
-  get '/signin', to: "sessions#new"
-  post '/signin', to: "sessions#create"
+  get '/signin', to: "session#new", as: 'signin'
+  post '/signin', to: "session#create", as: 'session'
   delete '/logout', to: "session#destroy"
 end
