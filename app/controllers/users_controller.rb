@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :verify, only: [:new, :create]
 
     def new 
         @user = User.new 
@@ -20,14 +21,15 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
-        # if !current_user.admin 
-        #     if @user != current_user
-        #         redirect_to root_path
-        #     end
-        # end
     end
 
     # def signin
+    #     if @user = User.find_by(name: params[:user][:name]) 
+    #         session[:user_id] = @user.id 
+    #         redirect_to user_path(@user)
+    #     else
+    #         render :new
+    #     end
     # end
     private 
 

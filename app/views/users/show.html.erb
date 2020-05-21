@@ -1,6 +1,6 @@
-Name: <%= current_user.name %>
-Mood: <%= current_user.mood %>
-Tickets: <%= current_user.tickets %>
-Height: <%= current_user.height %>
+Name: <%= @user.name %>
+Mood: <%= @user.mood %>
+Tickets: <%= @user.tickets %>
+Height: <%= @user.height %>
 
 <%= link_to "See attractions", attractions_path %>

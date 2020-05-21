@@ -1,7 +1,11 @@
 class AttractionsController < ApplicationController
 
-    def new 
+    def index
 
+    end
+    
+    def new 
+        @attraction = Attraction.new 
     end
 
     def create

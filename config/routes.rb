@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :attractions
+  resources :rides
 
   root 'static#home'
 
-  get '/signin', to: "users#signin"
-  post '/signin', to: "users#show"
+  get '/signin', to: "sessions#new"
+  post '/signin', to: "sessions#create"
 end
