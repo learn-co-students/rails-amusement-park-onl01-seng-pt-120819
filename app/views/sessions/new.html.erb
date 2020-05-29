@@ -1,0 +1,14 @@
+<%= form_tag sessions_path do |form| %>
+  <div class=”field”>
+    <%= select_tag "user_name", options_from_collection_for_select(@users, "id", "name")%>
+  </div>
+
+  <div class=”field”>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class=”actions”>
+    <input type = submit value ='Sign In'>
+  </div>
+<% end %>
