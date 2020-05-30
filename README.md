@@ -15,7 +15,6 @@ You're going to be building an amusement park. There will be users, attractions,
 
 ## Resources
 * [Rails Generators](http://guides.rubyonrails.org/generators.html)
-* [`rails generate`](https://guides.rubyonrails.org/command_line.html#rails-generate)
 * [Form Helpers](http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html)
 * [Form Helpers Guide](http://guides.rubyonrails.org/form_helpers.html)
 * [Collection Select](http://stackoverflow.com/questions/8907867/can-someone-explain-collection-select-to-me-in-clear-simple-terms)
