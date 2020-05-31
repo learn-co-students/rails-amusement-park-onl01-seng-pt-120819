@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
     has_many :attractions, through: :rides
 
     def mood
-        if self.nausea > self.happiness
+        if self.nausea.to_i > self.happiness.to_i
             user = "sad"
         elsif
-            self.happiness > self.nausea
+            self.happiness.to_i > self.nausea.to_i
             user = "happy"
         end
     end

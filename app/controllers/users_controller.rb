@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   
+  def index
+
+  end
+
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
   
   def new
@@ -10,18 +14,28 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    session[:user_id] = @user.id
-    #@user.save
-    #byebug
-    redirect_to users_path(@user.id)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
+      
+    else
+      render 'new'
+    end
     
   end
 
+  def ride
+    
+    @ride = Ride.new(user_id: current_user.id)
+    msg = @ride.take_ride
+    redirect_to user_path(current_user), :alert => msg
+    
+  end
   
   private
 
 def user_params
-  params.require(:user).permit(:name, :height, :nausea, :happiness, :tickets, :admin)
+  params.require(:user).permit(:name, :height, :nausea, :happiness, :tickets, :password, :admin)
 end
 
 end
