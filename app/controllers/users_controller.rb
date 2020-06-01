@@ -35,13 +35,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def ride
-    @ride = Ride.new(user_id: current_user.id)
-    msg = @ride.take_ride
-    byebug
-    redirect_to user_path(current_user), :alert => msg
-    
-  end
+  
   
   private
 

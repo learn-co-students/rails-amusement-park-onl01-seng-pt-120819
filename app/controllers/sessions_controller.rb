@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(name: params[:user][:name])
      session[:user_id] = params[:user][:name]
-     
+     byebug
     #  if session[:user_id]
        redirect_to user_path(@user)
     # else 
