@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   private
 
     def current_user
-      User.find(session[:user_id])
+     @user = User.find(session[:user_id])
+     #byebug
     end
+
+    def is_logged_in?
+      !!session[:user_id]
+   end
 end

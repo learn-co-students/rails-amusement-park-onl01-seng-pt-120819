@@ -1,3 +1,7 @@
-<%= @attraction.name %>
+<h1><%= @attraction.name %></h1>
 
-<%= link_to  "Go on this ride", take_ride_path(@attraction) %>
+<% if @user.admin == true %>
+  <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %>
+<% else %>
+  <%= link_to 'Go on this ride', user_path(@attraction), method: :post %>
+<% end %>

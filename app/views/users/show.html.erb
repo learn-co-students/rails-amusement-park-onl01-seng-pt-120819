@@ -1,4 +1,6 @@
 
+
+
 <% if @user.admin == true %>
   <h1>ADMIN</h1>
 <% end %>
@@ -8,5 +10,6 @@
 <p>Mood: <%= @user.mood %></p>
 <p>Height: <%= @user.height %></p>
 
-<%= link_to  "See attractions", attractions_index_path %><br>
+
+<%= link_to "See attractions", attractions_path %><br>
 <a href="/logout">Log Out</a>

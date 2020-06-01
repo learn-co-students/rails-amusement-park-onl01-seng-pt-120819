@@ -1,13 +1,14 @@
 <h1>Login</h1>
 
 
-<%= form_for signin_path do |f| %>
+<%= form_for :user do |f| %>
 <%= f.label :name, "Your name:" %>
-<%= collection_select :user, :user_id, User.all, :id, :name, id: "user_name" %>
+<%= collection_select :user, :name, User.all, :name, :name, prompt: "Please select your username from this dropdown" %>
 
-<%= f.label :password %>
-<%= f.password_field :password %>
+<label>Your Password:</label>
+<input type="password" name="password" id="password" >
 
-<%= f.submit "Sign in" %>
+<input type="submit" value="Sign In" id="value">
 
 <%end%>
+

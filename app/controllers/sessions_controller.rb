@@ -4,9 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(id: params[:id])
-    session[:user_id] = params[:id]
-    redirect_to user_path(@user)
+    @user = User.find_by(name: params[:user][:name])
+     session[:user_id] = params[:user][:name]
+     
+    #  if session[:user_id]
+       redirect_to user_path(@user)
+    # else 
+    #   redirect_to '/'
+    # end
     
   end
 
