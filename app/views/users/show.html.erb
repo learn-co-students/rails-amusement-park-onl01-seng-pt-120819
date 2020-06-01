@@ -3,19 +3,19 @@
 <% end %>
 
 <%if @user.admin%>
-    <p>ADMIN</p>
+    <h4>ADMIN</h4>
 <%end%> 
 
-<%=@user.name%>
+<%=@user.name%><br/>
 
-<%="Mood: #{@user.mood}"%>
+<%="Mood: #{@user.mood}"%><br/>
 
-<%="Tickets: #{@user.tickets}"%>
+<%="Tickets: #{@user.tickets}"%><br/>
 
-<%="Height: #{@user.height}"%>
+<%="Height: #{@user.height}"%><br/>
 
-<%= link_to "See attractions", attractions_path %>
+<%= link_to "See attractions", attractions_path %><br/>
 
-<%= link_to "Log Out", logout_path  %>
+<%= link_to "Log Out", logout_path %>
 
 
