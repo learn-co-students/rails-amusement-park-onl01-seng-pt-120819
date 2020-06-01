@@ -1,2 +1,5 @@
 class Ride < ActiveRecord::Base
-end
+    belongs_to :attraction
+    belongs_to :user 
+
+end 
