@@ -18,6 +18,18 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        
+<% if flash[:message] %>
+  <h2><%= flash[:message] %></h2>
+<% end %>
+
+          <% if !current_user %>
+            <a href="<%= new_user_path %>"/>Sign Up</a>
+            <%= link_to "Sign in", signin_path %>
+          <% end %>
+          <% if current_user %>
+            <%= link_to "Log Out", "/signout", method:'delete' %>
+          <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

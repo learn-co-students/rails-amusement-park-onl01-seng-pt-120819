@@ -1,0 +1,13 @@
+Name: <%= @attraction.name %><br>
+Tickets: <%= @attraction.tickets %><br>
+Nausea: <%= @attraction.nausea_rating %><br>
+Happiness: <%= @attraction.happiness_rating %><br>
+Minimum Height: <%= @attraction.min_height %><br>
+
+<%= form_for @ride do |t| %>
+    <%= submit_tag "Go on this ride"%>
+<% end %>
+
+<% if current_user.admin %>
+    <%= link_to "Edit Attraction", edit_attraction_path %>
+<% end %>
