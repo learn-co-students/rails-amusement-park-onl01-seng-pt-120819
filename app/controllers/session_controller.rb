@@ -9,8 +9,13 @@ class SessionController < ApplicationController
         session[:user_id] = user.id 
       redirect_to user_path(user)
       else 
-        render :new      
+        redirect_to '/'    
       end 
+  end 
+
+  def destroy 
+      reset_session
+        redirect_to '/' 
   end 
 
 end
