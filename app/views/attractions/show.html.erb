@@ -1,5 +1,8 @@
-<%=@attraction.name%>
-
+<%=@attraction.name%><br/>
+<%="Tickets: #{@attraction.tickets}"%><br/>
+<%="Nausea Rating: #{@attraction.nausea_rating}"%><br/>
+<%="Minimum Height: #{@attraction.min_height}"%><br/>
+<br/>
 <%if @user.admin%>
    <%= link_to "Edit Attraction", edit_attraction_path(@attraction)%> 
 <%else%>

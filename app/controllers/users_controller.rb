@@ -14,12 +14,14 @@ class UsersController < ApplicationController
     end
 
     def show 
-        if session.include? :user_id
-        @user = User.find_by(id: session[:user_id])
+        if ApplicationController.is_logged_in?(session) &&  ApplicationController.current_user(session)
+            @user = ApplicationController.current_user(session)
         else 
             redirect_to '/'
         end
     end
+
+
 
     private
  

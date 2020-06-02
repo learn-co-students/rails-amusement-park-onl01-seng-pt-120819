@@ -6,7 +6,7 @@ resources :sessions
 resources :attractions
 resources :rides
 
-root to: 'application#index'
+root to: 'static#home'
 
 get '/signin' => 'sessions#new' 
 get '/logout' => 'sessions#destroy'
