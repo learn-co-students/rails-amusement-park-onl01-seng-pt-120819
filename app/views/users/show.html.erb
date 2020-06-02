@@ -1,10 +1,10 @@
 <h1> <%= @user.name %> <h1>
-<p> Mood <%= @user.mood %> </p>
-<p> Ticket <%= @user.tickets %> </p>
-<p> Nausea <%= @user.nausea %> </p>
-<p> Height <%= @user.height %> </p>
+<p> Mood: <%= @user.mood %> </p>
+<p> Tickets: <%= @user.tickets %> </p>
+<p> Nausea: <%= @user.nausea %> </p>
+<p> Height: <%= @user.height %> </p>
 
 
 <p> ADMIN </P>
 <%= link_to "Log Out", logout_path  %> <br>
-<%= link_to "See Attractions", attractions_path %>
+<%= link_to "See attractions", attractions_path %>
