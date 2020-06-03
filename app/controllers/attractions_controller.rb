@@ -8,13 +8,13 @@ class AttractionsController < ApplicationController
     end 
 
     def new 
-        # @attraction = Attraction.new 
+        @attraction = Attraction.new 
     end 
 
     def create 
-        @attraction = Attraction.create(attraction_params)
+        @attraction = Attraction.create(atrac_params)
         if @attraction
-            redirect_to attractions_path(@attraction)
+            redirect_to attraction_path(@attraction)
         else
              render :new
         end
@@ -24,11 +24,23 @@ class AttractionsController < ApplicationController
        
     end 
 
-    private 
+    def update
+        @attraction.update(atrac_params)
+        if @attraction.save
+          redirect_to attraction_path(@attraction)
+        else
+          render :edit
+        end
+      end
+    
+      private 
 
     def find_attraction
         @attraction = Attraction.find_by(:id => params[:id])
     end
+
+    
+    
     
     def atrac_params
         params.require(:attraction).permit(:name, :min_height, :happiness_rating, :nausea_rating, :tickets)

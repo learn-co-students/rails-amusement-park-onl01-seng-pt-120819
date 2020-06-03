@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   def new
+    'http success'
   end
 
   def create 

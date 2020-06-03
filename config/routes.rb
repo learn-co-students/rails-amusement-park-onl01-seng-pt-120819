@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post '/signin' => 'session#create'
   get '/logout' => 'session#destroy'
   post '/rides' => 'rides#create'
- 
+  get '/session/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
