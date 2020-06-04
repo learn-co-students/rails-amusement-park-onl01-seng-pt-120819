@@ -1,0 +1,14 @@
+<h1>Login</h1>
+
+
+<%= form_for :user do |f| %>
+<%= f.label :name, "Your name:" %>
+<%= collection_select :user, :name, User.all, :name, :name, prompt: "Please select your username from this dropdown" %>
+
+<label>Your Password:</label>
+<input type="password" name="password" id="password" >
+
+<input type="submit" value="Sign In" id="value">
+
+<%end%>
+
