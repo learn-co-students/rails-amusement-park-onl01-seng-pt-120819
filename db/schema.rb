@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_05_30_090307) do
   end
 
   create_table "rides", force: :cascade do |t|
-    t.string "name"
     t.integer "user_id"
     t.integer "attraction_id"
   end

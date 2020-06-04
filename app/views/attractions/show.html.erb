@@ -1,3 +1,4 @@
+
 <h1><%= @attraction.name %></h1>
 
 
@@ -8,8 +9,12 @@
   <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %>
   </button>
 <% else %>
-<button class="btn btn-success">
-  <%= link_to 'Go on this ride', take_ride_path(@attraction), method: :post %>
-  </button>
+    <%= form_for @ride do |f|%>
+    
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :attraction_id %>
+    <%= f.submit  "Go on this ride" %>
+    <%end%>
+
 <% end %>
 

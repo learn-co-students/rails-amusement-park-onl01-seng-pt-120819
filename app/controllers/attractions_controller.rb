@@ -3,7 +3,6 @@ class AttractionsController < ApplicationController
     @attractions = Attraction.all
     @user = current_user
    #byebug
-
   end
 
   def new
@@ -34,10 +33,14 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @attraction = Attraction.find(params[:id])
-    #@attraction.rides.build
+    @attraction = Attraction.find_by(id: params[:id])
+    #byebug
+    #@ride = @attraction.rides.build(user_id: current_user.id)
     @user = current_user
     @ride = Ride.new
+    @ride.user = @user    
+    @ride.attraction = @attraction
+    
     #byebug
   end
 
